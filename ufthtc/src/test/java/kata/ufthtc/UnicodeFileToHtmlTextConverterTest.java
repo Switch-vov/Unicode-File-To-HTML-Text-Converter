@@ -2,6 +2,7 @@ package kata.ufthtc;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.io.StringReader;
 
 import static org.junit.Assert.assertEquals;
@@ -15,7 +16,7 @@ public class UnicodeFileToHtmlTextConverterTest {
     // TODO-new-feature: Make the UnicodeFileToHtmlTextConverter working for not only a file but also a string
 
     // TODO-user-intent-test-working-on: should convert ampersand
-    public void should_convert_ampersand() {
+    public void should_convert_ampersand() throws IOException {
         // Arrange
         UnicodeFileToHtmlTextConverter converter = new UnicodeFileToHtmlTextConverter(new StringReader("H&M"));
 
