@@ -5,12 +5,10 @@ import org.apache.commons.lang.StringEscapeUtils;
 import java.io.*;
 
 public class UnicodeFileToHtmlTextConverter {
-    private String fullFilenameWithPath;
     private Reader reader;
 
-    public UnicodeFileToHtmlTextConverter(String fullFilenameWithPath)
-    {
-        this.fullFilenameWithPath = fullFilenameWithPath;
+    public UnicodeFileToHtmlTextConverter(String fullFilenameWithPath) throws FileNotFoundException {
+        this.reader = new FileReader(fullFilenameWithPath);
     }
 
     public UnicodeFileToHtmlTextConverter(Reader reader) {
@@ -19,7 +17,7 @@ public class UnicodeFileToHtmlTextConverter {
 
     public String convertToHtml() throws IOException{
         // TODO: Depending on the file system violates the Dependency Inversion Principle and Open-Closed Principle
-        BufferedReader reader = new BufferedReader(this.reader));
+        BufferedReader reader = new BufferedReader(this.reader);
 
         String line = reader.readLine();
         String html = "";
