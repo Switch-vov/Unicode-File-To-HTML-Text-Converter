@@ -1,11 +1,10 @@
 package kata.ufthtc;
 
-import org.apache.commons.lang.StringEscapeUtils;
-
 import java.io.*;
 
 public class UnicodeFileToHtmlTextConverter {
     private Reader reader;
+    private StringEscaper stringEscaper;
 
     public UnicodeFileToHtmlTextConverter(String fullFilenameWithPath) throws FileNotFoundException {
         this.reader = new FileReader(fullFilenameWithPath);
