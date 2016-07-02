@@ -13,8 +13,6 @@ public class UnicodeFileToHtmlTextConverterTest {
         assertEquals(5, 2 + 3);
     }
 
-    // TODO-new-feature: Make the UnicodeFileToHtmlTextConverter working for not only a file but also a string
-
     @Test
     public void should_convert_ampersand() throws IOException {
         // Arrange
@@ -40,5 +38,15 @@ public class UnicodeFileToHtmlTextConverterTest {
 
         // Act & Assert
         assertEquals("Cheers<br />Switch<br />", converter.convertToHtml());
+    }
+
+    @Test
+    public void should_convert_ampersand_using_StringEscaper() {
+        // Arrange
+        StringEscaper stringEscaper = new StringEscaper();
+        UnicodeFileToHtmlTextConverter converter = new UnicodeFileToHtmlTextConverter(new StringReader("H&M"), stringEscaper);
+
+        // Act & Assert
+        assertEquals("H&amp;M<br />", converter.convertToHtml());
     }
 }
