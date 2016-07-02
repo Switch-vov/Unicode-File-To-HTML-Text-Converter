@@ -41,7 +41,7 @@ public class UnicodeFileToHtmlTextConverterTest {
     }
 
     @Test
-    public void should_convert_ampersand_using_StringEscaper() {
+    public void should_convert_ampersand_using_StringEscaper() throws IOException {
         // Arrange
         StringEscaper stringEscaper = new StringEscaper();
         UnicodeFileToHtmlTextConverter converter = new UnicodeFileToHtmlTextConverter(new StringReader("H&M"), stringEscaper);
