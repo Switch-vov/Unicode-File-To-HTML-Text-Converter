@@ -16,6 +16,7 @@ public class UnicodeFileToHtmlTextConverterTest {
     // TODO-new-feature: Make the UnicodeFileToHtmlTextConverter working for not only a file but also a string
 
     // TODO-user-intent-test-working-on: should convert ampersand
+    @Test
     public void should_convert_ampersand() throws IOException {
         // Arrange
         UnicodeFileToHtmlTextConverter converter = new UnicodeFileToHtmlTextConverter(new StringReader("H&M"));
