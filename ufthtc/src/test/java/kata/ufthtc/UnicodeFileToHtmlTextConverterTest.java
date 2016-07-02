@@ -12,7 +12,11 @@ public class UnicodeFileToHtmlTextConverterTest {
 
     // TODO-new-feature: Make the UnicodeFileToHtmlTextConverter working for not only a file but also a string
 
-    // TODO-user-intent-test: should convert ampersand
+    // TODO-user-intent-test-working-on: should convert ampersand
+    public void should_convert_ampersand() {
+        // Assert
+        assertEquals("", converter.convertToHtml());
+    }
 
     // TODO-user-intent-test: should convert greater than and less than
 
